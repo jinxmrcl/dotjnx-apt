@@ -2,7 +2,7 @@ Package: dotjnx
 Version: 0.4.0
 Architecture: armhf
 Maintainer: jinxmrcl <135718362+jinxmrcl@users.noreply.github.com>
-Installed-Size: 10764
+Installed-Size: 10828
 Depends: ca-certificates
 Section: interpreters
 Priority: optional
@@ -15,7 +15,7 @@ Description: Jinx – Discord-Bots in einfachen Worten, deutsch oder englisch
  .
  Jinx is a small language for Discord bots, in German or English words.
 Filename: pool/main/d/dotjnx/dotjnx_0.4.0_armhf.deb
-Size: 4571998
-MD5sum: de031dd23c172e4f90a7133e442ee488
-SHA1: 4a4da6fc6d6528f019764057a034021d41e46437
-SHA256: f1dd850fd15576382f19fe626db5d584562466060d44b7d12de66edcd5fb9985
+Size: 4579000
+MD5sum: d9e882830aa29744809b74a888090e6f
+SHA1: e7a86449aa34d446cc97b136d409702c409a2b14
+SHA256: 5918c18d66c70b4c0e8e9c665c72c7e03523cfd18a490cc5eb00703b301880ce

@@ -2,7 +2,7 @@ Origin: dotjnx
 Label: dotjnx
 Suite: stable
 Codename: stable
-Date: Sat, 24 Oct 2026 01:43:31 UTC
+Date: Sat, 24 Oct 2026 04:25:22 UTC
 Architectures: amd64 arm64 armhf
 Components: main
 Acquire-By-Hash: yes
@@ -12,19 +12,19 @@ MD5Sum:
  f70cbf030d8ecee28397bbc7a541a421      629 main/binary-amd64/Packages.gz
  945c51f00b6ef7d2471df9c18c1bac5d      888 main/binary-arm64/Packages
  4c304f63d59c7d2f5b4fbe54a5767bff      627 main/binary-arm64/Packages.gz
- fec7623d69d0909c436197213bbf2006      888 main/binary-armhf/Packages
- 12269712a97c083f7a59ed97db954752      627 main/binary-armhf/Packages.gz
+ f6b09f5656f87537205367bfbf5832b2      888 main/binary-armhf/Packages
+ 70b2981e61c271aacc3396ddfecc52ef      628 main/binary-armhf/Packages.gz
 SHA1:
  5cffada92d764233fc1cac9e3c71177afe8ed247      888 main/binary-amd64/Packages
  79d7fb23aa7eefc874b98454222c6d4198858fec      629 main/binary-amd64/Packages.gz
  2c8a62c3cbc9d96b5e412f20614105de79b9c38a      888 main/binary-arm64/Packages
  f2a6808b4887799d1f02b7544beb2b0a3a7ac1a2      627 main/binary-arm64/Packages.gz
- e238a90e93e43f4a7a400a21e41ecbff01a92854      888 main/binary-armhf/Packages
- c1d3d2f66d47ca8e191c5044b718bc8c4de86c60      627 main/binary-armhf/Packages.gz
+ 921d71aaf69660ede2107efbacf296019cfa4575      888 main/binary-armhf/Packages
+ a6bf2092bb7afd32f71124fba628847a5d2fa626      628 main/binary-armhf/Packages.gz
 SHA256:
  e27de72d85c5743c967ad8fe48f01e3626295c41542681af22bfd10b4021dd48      888 main/binary-amd64/Packages
  97d6852750225b56ac69f120ccb0f26193dbd83ad8d87c9ddbf89a6403d49cb3      629 main/binary-amd64/Packages.gz
  8b8065d67450a635d3517e8b81634fcc43f7001cc44c013e883a71e55413be0b      888 main/binary-arm64/Packages
  056859012d497476ba2f3937f6b3f577b85d77320147670f6a1bde1b9f25c45c      627 main/binary-arm64/Packages.gz
- a26492acb15517a84b61c2d4defced3c8cc83d7efa900c1ebf7eddebeb4281db      888 main/binary-armhf/Packages
- 79c59d2924c3b96cf5217cab1e113d751d868884505294c3dfcec0a942a3fe55      627 main/binary-armhf/Packages.gz
+ 5417c09fff5e829b509e034ffcd5b7bf22e4344912004f9aa0b7ae3430f3499e      888 main/binary-armhf/Packages
+ 2746c7f10a1d9ede9ba020fb39a83c77ac5c30397a53be3fa63d3b2a8bc3d3ec      628 main/binary-armhf/Packages.gz
