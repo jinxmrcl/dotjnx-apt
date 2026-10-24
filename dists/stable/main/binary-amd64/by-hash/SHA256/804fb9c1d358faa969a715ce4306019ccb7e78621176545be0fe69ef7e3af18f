@@ -1,0 +1,21 @@
+Package: dotjnx
+Version: 0.4.0
+Architecture: amd64
+Maintainer: jinxmrcl <135718362+jinxmrcl@users.noreply.github.com>
+Installed-Size: 11080
+Depends: ca-certificates
+Section: interpreters
+Priority: optional
+Homepage: https://jinxmrcl.github.io/dotjnx-apt
+Description: Jinx – Discord-Bots in einfachen Worten, deutsch oder englisch
+ Jinx ist eine kleine Sprache für Discord-Bots: Befehle, Knöpfe, Menüs,
+ Formulare, Events, Zeitpläne und gespeicherte Daten, geschrieben wie ein
+ Rezept. Das Programm jinx prüft, testet und startet die Bots und richtet
+ sie als systemd-Dienst ein.
+ .
+ Jinx is a small language for Discord bots, in German or English words.
+Filename: pool/main/d/dotjnx/dotjnx_0.4.0_amd64.deb
+Size: 4749458
+MD5sum: 64c5f001ffda89bcee7b28ea8cfb0f16
+SHA1: 244a67b283132dbb918266297f08c65fa1af0679
+SHA256: d39ce2ea754ee672d39e662c00dcd97e2a2c52bab969a9ba63e375716dcaf077

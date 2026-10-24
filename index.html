@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jinx für Debian und Ubuntu</title>
+<style>
+  :root { color-scheme: light dark; --bg: #fff8fb; --fg: #2a1c23; --muted: #7b6170; --accent: #d9548f; --code: #fbe7ef; }
+  @media (prefers-color-scheme: dark) { :root { --bg: #1b1317; --fg: #f5e9ef; --muted: #b89bab; --accent: #ff9ec4; --code: #2b1e25; } }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  main { max-width: 46rem; margin: 0 auto; padding: 3rem 1rem 4rem; }
+  h1 { color: var(--accent); font-size: 2rem; margin: 0 0 .25rem; }
+  h2 { margin-top: 2.25rem; }
+  p.lead { color: var(--muted); margin-top: 0; }
+  pre { background: var(--code); padding: .8rem 1rem; border-radius: .5rem; overflow-x: auto; font-size: .9rem; }
+  code { font-family: ui-monospace, "Cascadia Code", Consolas, monospace; }
+  :not(pre) > code { background: var(--code); padding: .1rem .3rem; border-radius: .25rem; }
+  .small { color: var(--muted); font-size: .9rem; }
+  hr { border: 0; border-top: 1px solid var(--code); margin: 3rem 0; }
+</style>
+</head>
+<body>
+<main>
+<h1>🌸 Jinx für Debian und Ubuntu</h1>
+<p class="lead">Das apt-Repository für <b>Jinx</b> – Discord-Bots in einfachen Worten. Paket <code>dotjnx</code>, für amd64, arm64 und armhf (Raspberry Pi).</p>
+
+<h2>Installieren</h2>
+<pre><code>curl -fsSL https://jinxmrcl.github.io/dotjnx-apt/install.sh | sudo sh</code></pre>
+<p>Das fügt die Paketquelle einmal hinzu und installiert <code>jinx</code>. Neue Versionen kommen danach ganz normal mit</p>
+<pre><code>sudo apt update &amp;&amp; sudo apt upgrade</code></pre>
+
+<h2>Von Hand</h2>
+<pre><code>sudo install -d -m 0755 /etc/apt/keyrings
+curl -fsSL https://jinxmrcl.github.io/dotjnx-apt/dotjnx.gpg | sudo tee /etc/apt/keyrings/dotjnx.gpg &gt; /dev/null
+echo "deb [signed-by=/etc/apt/keyrings/dotjnx.gpg] https://jinxmrcl.github.io/dotjnx-apt stable main" | sudo tee /etc/apt/sources.list.d/dotjnx.list
+sudo apt update
+sudo apt install dotjnx</code></pre>
+<p class="small">Fingerabdruck des Signaturschlüssels: <code>9712 1206 6447 89EA 14DC D0FC E9A7 EDF3 9AA0 1C7B</code></p>
+
+<h2>Entfernen</h2>
+<pre><code>sudo apt remove dotjnx
+sudo rm /etc/apt/sources.list.d/dotjnx.list /etc/apt/keyrings/dotjnx.gpg</code></pre>
+
+<hr>
+
+<h2 lang="en">English</h2>
+<div lang="en">
+<p>The apt repository of <b>Jinx</b>, the language for Discord bots. Install it once with</p>
+<pre><code>curl -fsSL https://jinxmrcl.github.io/dotjnx-apt/install.sh | sudo sh</code></pre>
+<p>and get every new version with <code>sudo apt update &amp;&amp; sudo apt upgrade</code>. The manual steps and the removal are the same as above.</p>
+</div>
+</main>
+</body>
+</html>

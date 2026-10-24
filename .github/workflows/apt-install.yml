@@ -1,0 +1,43 @@
+# Installs dotjnx after every push the way the instructions say – on Debian and Ubuntu, for
+# amd64, arm64 and armhf – and tries jinx out.
+name: apt install
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  pages:
+    name: GitHub Pages ist aktuell
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - run: sh .github/wait-for-pages.sh
+
+  install:
+    needs: pages
+    name: ${{ matrix.image }} ${{ matrix.platform }}
+    runs-on: ${{ matrix.runner }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { image: "debian:12", platform: amd64, runner: ubuntu-latest }
+          - { image: "debian:13", platform: amd64, runner: ubuntu-latest }
+          - { image: "ubuntu:22.04", platform: amd64, runner: ubuntu-latest }
+          - { image: "ubuntu:24.04", platform: amd64, runner: ubuntu-latest }
+          - { image: "ubuntu:26.04", platform: amd64, runner: ubuntu-latest }
+          - { image: "debian:12", platform: arm64, runner: ubuntu-24.04-arm }
+          - { image: "ubuntu:24.04", platform: arm64, runner: ubuntu-24.04-arm }
+          - { image: "debian:12", platform: arm/v7, runner: ubuntu-latest }
+    steps:
+      - uses: actions/checkout@v5
+      - name: armhf über QEMU
+        if: matrix.platform == 'arm/v7'
+        run: docker run --privileged --rm tonistiigi/binfmt --install arm
+      - name: installieren und ausprobieren
+        run: docker run --rm --platform linux/${{ matrix.platform }} -v "$PWD/.github:/t:ro" ${{ matrix.image }} sh /t/apt-test.sh
