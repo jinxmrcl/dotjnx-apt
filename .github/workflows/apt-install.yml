@@ -32,7 +32,6 @@ jobs:
           - { image: "debian:11", platform: amd64, runner: ubuntu-latest }
           - { image: "debian:12", platform: amd64, runner: ubuntu-latest }
           - { image: "debian:13", platform: amd64, runner: ubuntu-latest }
-          - { image: "ubuntu:14.04", platform: amd64, runner: ubuntu-latest }
           - { image: "ubuntu:16.04", platform: amd64, runner: ubuntu-latest }
           - { image: "ubuntu:18.04", platform: amd64, runner: ubuntu-latest }
           - { image: "ubuntu:20.04", platform: amd64, runner: ubuntu-latest }
@@ -41,15 +40,21 @@ jobs:
           - { image: "ubuntu:26.04", platform: amd64, runner: ubuntu-latest }
           - { image: "debian:12", platform: arm64, runner: ubuntu-24.04-arm }
           - { image: "ubuntu:24.04", platform: arm64, runner: ubuntu-24.04-arm }
-          - { image: "debian:10", platform: arm/v7, runner: ubuntu-latest }
-          - { image: "debian:12", platform: arm/v7, runner: ubuntu-latest }
-          - { image: "debian:12", platform: arm/v5, runner: ubuntu-latest }
+          - { image: "debian:10", platform: arm/v7, runner: ubuntu-24.04-arm }
+          - { image: "debian:12", platform: arm/v7, runner: ubuntu-24.04-arm }
+          - { image: "debian:13", platform: arm/v5, runner: ubuntu-24.04-arm }
           - { image: "debian:9", platform: 386, runner: ubuntu-latest }
           - { image: "debian:12", platform: 386, runner: ubuntu-latest }
     steps:
       - uses: actions/checkout@v5
-      - name: ARM mit 32 Bit über QEMU
+      - name: ARM mit 32 Bit – direkt auf dem ARM-Rechner, sonst über QEMU
         if: startsWith(matrix.platform, 'arm/')
-        run: docker run --privileged --rm tonistiigi/binfmt --install arm
+        run: |
+          if docker run --rm --platform linux/${{ matrix.platform }} ${{ matrix.image }} true; then
+            echo "läuft direkt, ohne Emulation"
+          else
+            echo "kein 32-Bit-ARM auf diesem Rechner – QEMU"
+            docker run --privileged --rm tonistiigi/binfmt --install arm
+          fi
       - name: installieren und ausprobieren
         run: docker run --rm --platform linux/${{ matrix.platform }} -v "$PWD/.github:/t:ro" ${{ matrix.image }} sh /t/apt-test.sh

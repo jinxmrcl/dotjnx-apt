@@ -1,6 +1,6 @@
 #!/bin/sh
 # Jinx für Debian und Ubuntu: fügt das apt-Repository hinzu und installiert das Paket dotjnx.
-# Danach kommen neue Versionen mit „sudo apt upgrade“. Geht ab Debian 8 und Ubuntu 14.04.
+# Danach kommen neue Versionen mit „sudo apt upgrade“. Geht ab Debian 8 und Ubuntu 16.04.
 #
 #   curl -fsSL https://jinxmrcl.github.io/dotjnx-apt/install.sh | sudo sh                     installieren
 #   curl -fsSL https://jinxmrcl.github.io/dotjnx-apt/install.sh | sudo sh -s -- --entfernen   wieder entfernen
@@ -25,6 +25,13 @@ case "${1:-}" in
   exit 0 ;;
 esac
 
+# Ubuntu 14.04 und älter beherrschen die Verschlüsselung nicht mehr, die GitHub Pages verlangt
+ID="" VERSION_ID=""
+[ -r /etc/os-release ] && . /etc/os-release
+if [ "$ID" = ubuntu ] && dpkg --compare-versions "$VERSION_ID" lt 16.04; then
+  stop "Ubuntu $VERSION_ID ist zu alt – Jinx geht ab Ubuntu 16.04 / Ubuntu $VERSION_ID is too old – Jinx needs 16.04 or newer."
+fi
+
 fetch() {
   if command -v curl >/dev/null 2>&1; then curl -fsSL "$1"
   elif command -v wget >/dev/null 2>&1; then wget -qO- "$1"
@@ -41,8 +48,8 @@ if [ -n "$need" ]; then
   apt-get install -y -qq $need
 fi
 
-# Ab apt 1.1 gilt der Schlüssel nur für diese Quelle (signed-by). Debian 8 und Ubuntu 14.04
-# kennen das noch nicht – dort vertraut apt ihm wie den Schlüsseln der Distribution.
+# Ab apt 1.1 gilt der Schlüssel nur für diese Quelle (signed-by). Debian 8 kennt das noch
+# nicht – dort vertraut apt ihm wie den Schlüsseln der Distribution.
 if dpkg --compare-versions "$(dpkg-query -W -f='${Version}' apt)" ge 1.1; then
   KEY=$KEYRING
   LINE="deb [signed-by=$KEY] $URL stable main"
