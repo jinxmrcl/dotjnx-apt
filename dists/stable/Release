@@ -2,8 +2,8 @@ Origin: dotjnx
 Label: dotjnx
 Suite: stable
 Codename: stable
-Date: Sat, 24 Oct 2026 04:25:22 UTC
-Architectures: amd64 arm64 armhf
+Date: Sat, 24 Oct 2026 08:02:40 UTC
+Architectures: amd64 arm64 armhf armel i386
 Components: main
 Acquire-By-Hash: yes
 Description: Jinx – Discord-Bots in einfachen Worten
@@ -14,6 +14,10 @@ MD5Sum:
  4c304f63d59c7d2f5b4fbe54a5767bff      627 main/binary-arm64/Packages.gz
  f6b09f5656f87537205367bfbf5832b2      888 main/binary-armhf/Packages
  70b2981e61c271aacc3396ddfecc52ef      628 main/binary-armhf/Packages.gz
+ 5a741f961c862f0e3500a63c0b4d8e0e      888 main/binary-armel/Packages
+ 58865060b88e18c93fd9545d071718cb      627 main/binary-armel/Packages.gz
+ d562778fe62ca59625bb393d3cf18902      886 main/binary-i386/Packages
+ 1a0f353f7660c9a34e7e573e5f570ae9      627 main/binary-i386/Packages.gz
 SHA1:
  5cffada92d764233fc1cac9e3c71177afe8ed247      888 main/binary-amd64/Packages
  79d7fb23aa7eefc874b98454222c6d4198858fec      629 main/binary-amd64/Packages.gz
@@ -21,6 +25,10 @@ SHA1:
  f2a6808b4887799d1f02b7544beb2b0a3a7ac1a2      627 main/binary-arm64/Packages.gz
  921d71aaf69660ede2107efbacf296019cfa4575      888 main/binary-armhf/Packages
  a6bf2092bb7afd32f71124fba628847a5d2fa626      628 main/binary-armhf/Packages.gz
+ 149a9880ddfbe71d9f6d3b1e35cf59b27626b88e      888 main/binary-armel/Packages
+ 0975afd1ecf28afecfd07922751b3fcdb3d0c149      627 main/binary-armel/Packages.gz
+ 70be98d47c3b9ebf7b1d64b9fcde2567d38fa338      886 main/binary-i386/Packages
+ 18408bebe32d234085fc30e1c531f2466758c310      627 main/binary-i386/Packages.gz
 SHA256:
  e27de72d85c5743c967ad8fe48f01e3626295c41542681af22bfd10b4021dd48      888 main/binary-amd64/Packages
  97d6852750225b56ac69f120ccb0f26193dbd83ad8d87c9ddbf89a6403d49cb3      629 main/binary-amd64/Packages.gz
@@ -28,3 +36,7 @@ SHA256:
  056859012d497476ba2f3937f6b3f577b85d77320147670f6a1bde1b9f25c45c      627 main/binary-arm64/Packages.gz
  5417c09fff5e829b509e034ffcd5b7bf22e4344912004f9aa0b7ae3430f3499e      888 main/binary-armhf/Packages
  2746c7f10a1d9ede9ba020fb39a83c77ac5c30397a53be3fa63d3b2a8bc3d3ec      628 main/binary-armhf/Packages.gz
+ 87a2f68aac793157b2ed12e572ee81eb1eb5701b1ec45786d406254140eb571a      888 main/binary-armel/Packages
+ 248685ea603edae1939adbfe562201e8983b235629bffca69b91bd054ea77c60      627 main/binary-armel/Packages.gz
+ 24605d9387471690c7b2ce32e75ab56cab34f436fff8bcce47a156c73f4f396e      886 main/binary-i386/Packages
+ 901b27cdf8d23cf6b16c1447971feabb8cbbf3a0b57df64cf4295cee5ab11ac5      627 main/binary-i386/Packages.gz
